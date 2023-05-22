@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs';
 import { FifaserviceService } from 'services/fifaservice.service';
 
 @Component({
@@ -18,6 +19,6 @@ export class AppComponent  implements OnInit{
     private router: Router) { }
   async ngOnInit() {
     this.listCards = await (this.fifaService.getAllPlayers())
-    console.log(this.listCards)
+    this.listCards.map((player:object)=>{console.log(player)})
   }
 }
