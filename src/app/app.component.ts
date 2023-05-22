@@ -19,5 +19,8 @@ export class AppComponent  implements OnInit{
     private router: Router) { }
   async ngOnInit() {
     this.listCards = await (this.fifaService.getAllPlayers())
+    this.listCards.forEach((player:Object) => {
+     console.log(player) 
+    });
   }
 }

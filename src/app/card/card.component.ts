@@ -10,7 +10,7 @@ export class CardComponent {
   @Input() player_id!: number
   @Input() name!: string
   @Input() full_name!: string
-  // @Input() image!: string
+  @Input() image!: string
   @Input() weight!:number
   @Input() height!:number
   @Input() overall_rating!: number
