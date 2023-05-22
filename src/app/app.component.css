@@ -1,0 +1,11 @@
+.card-list {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 20%);
+}
+.container {
+    height: 98vh;
+    width: 98vw;
+}
