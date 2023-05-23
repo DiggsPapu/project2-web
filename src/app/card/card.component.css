@@ -7,20 +7,25 @@
     position: relative;
     top: 0;
     right: 0;
+    background-color: transparent;
 }
 .card h1{
    font-size: 100%;
    width: fit-content; 
+   background-color: transparent;
 }
 .card img{
     width: 20%;
+    background-color: transparent;
     height: auto;
 }
 .card p {
     font-size: 50%;
     width: fit-content;
+    background-color: transparent;
 }
 .card figcaption{
     font-size: 50%;
+    background-color: transparent;
     width: fit-content;
 }

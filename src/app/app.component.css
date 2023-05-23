@@ -5,6 +5,7 @@
     grid-template-columns: repeat(5, 20%);
     grid-template-rows: repeat(5, 20%);
     gap: 1%;
+    background-color: transparent;
 }
 .container {
     height: 98vh;

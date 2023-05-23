@@ -25,8 +25,12 @@ export class FifaserviceService {
     const player = await this.supabase.from(PLAYER_TABLE).select(ALL).eq('player_id', player_id)
     return player || null
   }
-  async getTeam(team_id: number) {
+  async getAllTeam(team_id: number) {
     const team = await this.supabase.from(TEAM_TABLE).select(ALL).eq('team_id', team_id)
     return team || null
+  }
+  async getPlayersFromTeam(team_id:number) {
+    const players = await this.supabase.from(PLAYER_TABLE).select(ALL).eq('team_id', team_id)
+    return players || null
   }
 }
