@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card-list">
+    <!-- <div class="card-list">
         <app-card *ngFor="let card of listCards" class="card"
         [player_id]="card.player_id"
         [name]="card.name"
@@ -9,5 +9,9 @@
         [full_name]="card.full_name"
         [image]="card.image"
         ></app-card>
-    </div>
+    </div> -->
+        <input type="text" [(ngModel)]="searchQuery" placeholder="Search...">
+        <button (click)="onSearch()">Search</button>
+    <app-table
+        [list]="listTeams"></app-table>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FifaserviceService } from 'services/fifaservice.service';
 
@@ -12,20 +13,32 @@ export class AppComponent  implements OnInit{
   title = 'To-Do List'
   listCards: any = {}
   editCard: any = {}
-  private search: string = ""
+  search: string = ""
   listTeams: any = {}
-  player: any = {}
+  players: any = {}
+  searchQuery: string = '';
+
+  onSearch() {
+    // Handle the search logic
+    console.log('Search query:', this.searchQuery);
+    this.searchTeamPlayers()
+    console.log(this.players)
+    // Perform the desired search operation based on the search query
+  }
   constructor(
     private route: ActivatedRoute,
     private fifaService: FifaserviceService,
     private router: Router,
     ) { }
+  async searchTeamPlayers(){
+    console.log(this.search)
+    this.players = await this.fifaService.getPlayersFromTeam(this.searchQuery)
+    console.log(this.players)
+  }
   async ngOnInit() {
     this.listTeams = await (this.fifaService.getAllTeams())
     this.listCards = await (this.fifaService.getAllPlayers())
-    this.player = await (this.fifaService.getPlayersFromTeam('Atlético Madrid'))
     console.log(this.listTeams)
-    console.log(this.player)
     // this.listTeams.forEach((team:Object) => {
     //  console.log(team) 
     // });

@@ -42,8 +42,8 @@ export class FifaserviceService {
   }
   async getPlayersFromTeam(team_name:string) {
     let { data: teamResponse, error } = await this.supabase.from('club').select(`player (*)`).eq('club_name',team_name)
-    if (teamResponse !== null) {return teamResponse[0]['player']}
-    return null
+    if (teamResponse === null || teamResponse === undefined) {return null}
+    return teamResponse[0]['player']
   }
   async getPlayersFromCountry(country_name:string) {
     let { data: countryResponse, error } = await this.supabase.from('country').select(`player (*)`).eq('country_name',country_name)

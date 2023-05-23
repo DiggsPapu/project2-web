@@ -1,4 +1,31 @@
 <div class="table">
-    
-    <input type="text">
+    <table>
+        <thead>
+          <tr>
+            <th>Club Logo</th>
+            <th>Club Name</th>
+            <th>Club Id</th>
+            <!-- Add more table headers as needed -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of list">
+            <td>
+                <img src={{row.club_logo}} />
+            </td>
+            <td>{{row.club_name}}</td>
+            <td>{{row.club_id}}</td>
+          </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td><button [disabled]="currentPage === 1" (click)="currentPage = 1">First</button></td>
+                <td><button [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1">Previous</button></td>
+                <td><span>{{ currentPage }} / {{ totalPages }}</span></td>
+                <td><button [disabled]="currentPage === totalPages" (click)="currentPage = currentPage + 1">Next</button></td>
+                <td><button [disabled]="currentPage === totalPages" (click)="currentPage = totalPages">Last</button></td>
+            </tr>
+        </tbody>
+    </table>  
+      
 </div>
