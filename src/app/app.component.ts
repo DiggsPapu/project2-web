@@ -23,8 +23,9 @@ export class AppComponent  implements OnInit{
   async ngOnInit() {
     this.listTeams = await (this.fifaService.getAllTeams())
     this.listCards = await (this.fifaService.getAllPlayers())
-    this.player = await (this.fifaService.getPlayersFromTeam('Atletico de Madrid'))
+    this.player = await (this.fifaService.getPlayersFromTeam('Atlético Madrid'))
     console.log(this.listTeams)
+    console.log(this.player)
     // this.listTeams.forEach((team:Object) => {
     //  console.log(team) 
     // });

@@ -41,17 +41,11 @@ export class FifaserviceService {
     return player || null
   }
   async getPlayersFromTeam(team_name:string) {
-    let { data: players, error } = await this.supabase
-    .from('club')
-    .select(`
-      *,
-      player (
-        *
-      )
-    `)
-    .eq('club_name','Atlético Madrid')
-
-    console.log(players)
-    return players || null
+    // let { data: players, error } = await this.supabase.from('club').select(`*,player (*)`).eq('club_name','Atlético Madrid')
+    let { data: teamResponse, error } = await this.supabase.from('club').select(`player (*)`).eq('club_name',team_name)
+    if (teamResponse !== null) {return teamResponse[0]['player']}
+    return null
+    // console.log(players)
+    // return players || null
   }
 }
