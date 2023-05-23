@@ -4,8 +4,13 @@
     display: grid;
     grid-template-columns: repeat(5, 20%);
     grid-template-rows: repeat(5, 20%);
+    gap: 1%;
 }
 .container {
     height: 98vh;
     width: 98vw;
+}
+.card {
+    height: 100%;
+    width: 100%;
 }
