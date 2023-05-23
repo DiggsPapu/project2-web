@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs';
 import { FifaserviceService } from 'services/fifaservice.service';
 
 @Component({
@@ -13,14 +12,21 @@ export class AppComponent  implements OnInit{
   title = 'To-Do List'
   listCards: any = {}
   editCard: any = {}
+  private search: string = ""
+  listTeams: any = {}
+  player: any = {}
   constructor(
     private route: ActivatedRoute,
     private fifaService: FifaserviceService,
-    private router: Router) { }
+    private router: Router,
+    ) { }
   async ngOnInit() {
+    this.listTeams = await (this.fifaService.getAllTeams())
     this.listCards = await (this.fifaService.getAllPlayers())
-    this.listCards.forEach((player:Object) => {
-     console.log(player) 
-    });
+    this.player = await (this.fifaService.getPlayersFromTeam('Atletico de Madrid'))
+    console.log(this.listTeams)
+    // this.listTeams.forEach((team:Object) => {
+    //  console.log(team) 
+    // });
   }
 }
