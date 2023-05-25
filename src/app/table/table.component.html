@@ -1,4 +1,5 @@
 <div class="table">
+  <input type="text" [(ngModel)]="searchQuery" (input)="onSearch()" placeholder="Search...">
     <table>
         <thead>
           <tr>
@@ -9,7 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let row of list">
+          <tr *ngFor="let row of tableList">
             <td>
                 <img src={{row.club_logo}} />
             </td>
@@ -19,11 +20,11 @@
         </tbody>
         <tbody>
             <tr>
-                <td><button [disabled]="currentPage === 1" (click)="currentPage = 1">First</button></td>
-                <td><button [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1">Previous</button></td>
+                <td><button [disabled]="currentPage === 1" (click)="returnFirstPage()">First</button></td>
+                <td><button [disabled]="currentPage === 1" (click)="prevPage()">Previous</button></td>
                 <td><span>{{ currentPage }} / {{ totalPages }}</span></td>
-                <td><button [disabled]="currentPage === totalPages" (click)="currentPage = currentPage + 1">Next</button></td>
-                <td><button [disabled]="currentPage === totalPages" (click)="currentPage = totalPages">Last</button></td>
+                <td><button [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button></td>
+                <td><button [disabled]="currentPage === totalPages" (click)="returnLastPage()">Last</button></td>
             </tr>
         </tbody>
     </table>  

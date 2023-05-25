@@ -32,3 +32,8 @@ button{
     width: 100%;
     height: fit-content;
 }
+
+input {
+    width: 50%;
+    height: fit-content;
+}

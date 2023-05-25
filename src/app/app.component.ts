@@ -18,20 +18,6 @@ export class AppComponent  implements OnInit{
   players: any = {}
   searchQuery: string = '';
   tableList: any = {}
-
-  onSearch() {
-    if (this.searchQuery === "") {
-      this.tableList = this.listTeams
-    }
-    else {
-      for (let index = 0; index < this.listTeams.length; index++) {
-        if (this.searchQuery === this.listTeams[index]['club_name']){
-          this.tableList = [this.listTeams[index]]
-        }
-      }
-    }
-    console.log(this.tableList)
-  }
   constructor(
     private route: ActivatedRoute,
     private fifaService: FifaserviceService,
@@ -46,8 +32,5 @@ export class AppComponent  implements OnInit{
     this.listTeams = await (this.fifaService.getAllTeams())
     this.listCards = await (this.fifaService.getAllPlayers())
     this.tableList = this.listTeams
-    // this.listTeams.forEach((team:Object) => {
-    //  console.log(team) 
-    // });
   }
 }

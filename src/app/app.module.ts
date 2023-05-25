@@ -7,6 +7,7 @@ import { TableComponent } from './table/table.component';
 import { TableRowComponent } from './table-row/table-row.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

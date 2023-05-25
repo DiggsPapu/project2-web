@@ -24,7 +24,7 @@ export class FifaserviceService {
     return player || []
   }
   async getAllTeams() {
-    let {data: teams, error} = await this.supabase.from(TEAM_TABLE).select(ALL).limit(50)
+    let {data: teams, error} = await this.supabase.from(TEAM_TABLE).select(ALL)
     return teams || null
   }
   async getAllCountries() {
