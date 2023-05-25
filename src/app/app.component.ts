@@ -17,13 +17,20 @@ export class AppComponent  implements OnInit{
   listTeams: any = {}
   players: any = {}
   searchQuery: string = '';
+  tableList: any = {}
 
   onSearch() {
-    // Handle the search logic
-    console.log('Search query:', this.searchQuery);
-    this.searchTeamPlayers()
-    console.log(this.players)
-    // Perform the desired search operation based on the search query
+    if (this.searchQuery === "") {
+      this.tableList = this.listTeams
+    }
+    else {
+      for (let index = 0; index < this.listTeams.length; index++) {
+        if (this.searchQuery === this.listTeams[index]['club_name']){
+          this.tableList = [this.listTeams[index]]
+        }
+      }
+    }
+    console.log(this.tableList)
   }
   constructor(
     private route: ActivatedRoute,
@@ -38,7 +45,7 @@ export class AppComponent  implements OnInit{
   async ngOnInit() {
     this.listTeams = await (this.fifaService.getAllTeams())
     this.listCards = await (this.fifaService.getAllPlayers())
-    console.log(this.listTeams)
+    this.tableList = this.listTeams
     // this.listTeams.forEach((team:Object) => {
     //  console.log(team) 
     // });

@@ -10,8 +10,7 @@
         [image]="card.image"
         ></app-card>
     </div> -->
-        <input type="text" [(ngModel)]="searchQuery" placeholder="Search...">
-        <button (click)="onSearch()">Search</button>
+        <input type="text" [(ngModel)]="searchQuery" (input)="onSearch()" placeholder="Search...">
     <app-table
-        [list]="listTeams"></app-table>
+        [list]="tableList"></app-table>
 </div>
