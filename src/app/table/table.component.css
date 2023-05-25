@@ -1,7 +1,12 @@
-.table {
+.container {
+    width: 1000px;
+    height: fit-content;
+    margin-top: 3%;
+    align-items: center;
+}
+.table-condensed {
     width: 100%;
-    height: auto;
-    margin: 1%;
+    height: fit-content;
 }
 img {
     width: auto;
@@ -10,30 +15,40 @@ img {
 thead {
     width: fit-content;
     height: fit-content;
+    color: black;
 }
 tbody {
     width: fit-content;
-    height: fit-content;
+    height: 539.13px;
+    color: black;
 }
 tr {
     width: fit-content;
     height: fit-content;
+    color: black;
 }
 th {
-    width: fit-content;
+    width: 33%;
     height: fit-content;
     text-align: left;
+    color: black;
 }
 td {
     width: fit-content;
     height: fit-content;
+    color: black;
+    align-content: center;
 }
 button{
-    width: 100%;
+    width: fit-content;
     height: fit-content;
+    margin-right: 5%;
 }
 
 input {
     width: 50%;
+    height: fit-content;
+}
+.last {
     height: fit-content;
 }

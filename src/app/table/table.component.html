@@ -1,32 +1,35 @@
-<div class="table">
-  <input type="text" [(ngModel)]="searchQuery" (input)="onSearch()" placeholder="Search...">
-    <table>
-        <thead>
+<div class="container">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchQuery" (input)="onSearch()">
+  <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Club Logo</th>
+          <th>Club Name</th>
+          <th>Club Id</th>
+          <!-- Add more table headers as needed -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of tableList">
+          <td>
+              <img src={{row.club_logo}} />
+          </td>
+          <td>{{row.club_name}}</td>
+          <td>{{row.club_id}}</td>
+        </tr>
+      </tbody>
+      <tbody class="last">
           <tr>
-            <th>Club Logo</th>
-            <th>Club Name</th>
-            <th>Club Id</th>
-            <!-- Add more table headers as needed -->
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of tableList">
             <td>
-                <img src={{row.club_logo}} />
+              <button type="button" class="btn btn-danger" [disabled]="currentPage===1" (click)="returnFirstPage()">First</button>
+              <button type="button" class="btn btn-danger" [disabled]="currentPage === 1" (click)="prevPage()">Previous</button>
             </td>
-            <td>{{row.club_name}}</td>
-            <td>{{row.club_id}}</td>
+            <td><span>{{ currentPage }} / {{ totalPages }}</span></td>
+            <td>
+              <button type="button" class="btn btn-success" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+              <button type="button" class="btn btn-success" [disabled]="currentPage === totalPages" (click)="returnLastPage()">Last</button>
+            </td>
           </tr>
-        </tbody>
-        <tbody>
-            <tr>
-                <td><button [disabled]="currentPage === 1" (click)="returnFirstPage()">First</button></td>
-                <td><button [disabled]="currentPage === 1" (click)="prevPage()">Previous</button></td>
-                <td><span>{{ currentPage }} / {{ totalPages }}</span></td>
-                <td><button [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button></td>
-                <td><button [disabled]="currentPage === totalPages" (click)="returnLastPage()">Last</button></td>
-            </tr>
-        </tbody>
-    </table>  
-      
+      </tbody>
+  </table>  
 </div>

@@ -7,11 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TableComponent {  
   @Input() list!: any
+  minIndex:number = 0
+  maxIndex:number = 5
   tableList: any = []
   currentPage: number = 1
   itemsPerPage: number = 5
-  minIndex:number = 0
-  maxIndex:number = 5
   searchQuery: string = '';
 
   onSearch() {
@@ -40,37 +40,36 @@ export class TableComponent {
   }
   returnFirstPage() {
     this.currentPage = 1
-    this.maxIndex = 5;
+    this.maxIndex = this.itemsPerPage;
     this.minIndex = 0;
     this.tableList = this.list.slice(this.minIndex,this.maxIndex)
   }
   returnLastPage() {
     this.currentPage = this.totalPages
     this.maxIndex = this.list.length;
-    this.minIndex = this.list.length-5;
+    this.minIndex = this.list.length-this.itemsPerPage;
     this.tableList = this.list.slice(this.minIndex,this.maxIndex)
   }
   nextPage() {
     if (this.currentPage !== this.totalPages){
       this.currentPage +=1
-      this.maxIndex+=5
-      this.minIndex+=5
+      this.maxIndex+=this.itemsPerPage
+      this.minIndex+=this.itemsPerPage
       this.tableList = this.list.slice(this.minIndex, this.maxIndex)
     }
   }
   prevPage() {
     if (this.currentPage !== 1) {
       this.currentPage -=1
-      this.maxIndex-=5
-      this.minIndex-=5
+      this.maxIndex-=this.itemsPerPage
+      this.minIndex-=this.itemsPerPage
       this.tableList = this.list.slice(this.minIndex, this.maxIndex)
     }
   }
   searchByName() {
     if (this.list.length === 1){this.tableList = this.list}
   }
-  constructor(){}
-  ngOnInit(): void{
-    this.tableList = this.list
+  constructor(){
+    setTimeout(()=>{this.tableList = this.list.slice(this.minIndex,this.maxIndex)},1000)
   }
 }
