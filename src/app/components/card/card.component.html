@@ -1,7 +1,16 @@
-<div class="card">
-    <img src={{image}} />
-    <h1>{{name}}</h1>
-    <p>{{ full_name }}</p>
-    <p>weight: {{weight}}</p>
-    <p>height: {{height}}</p>
-</div>
+<div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h1>{{name}}</h1>
+        <img src={{image}}>
+      </div>
+      <div class="flip-card-back">
+        <h1>{{name}}</h1>
+        <div>
+            <p>{{full_name}}</p>
+            <p>weight: {{weight}}</p>
+            <p>height: {{height}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

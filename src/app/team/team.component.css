@@ -2,8 +2,8 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: repeat(5, 20%);
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: repeat(5, 33.33%);
     gap: 1%;
     background-color: transparent;
 }

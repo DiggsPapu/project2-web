@@ -1,5 +1,5 @@
 .container {
-    width: 1000px;
+    width: 100%;
     height: fit-content;
     margin-top: 3%;
     align-items: center;
@@ -15,34 +15,28 @@ img {
 thead {
     width: fit-content;
     height: fit-content;
-    color: black;
 }
 tbody {
     width: fit-content;
     height: 539.13px;
-    color: black;
 }
 tr {
     width: fit-content;
     height: fit-content;
-    color: black;
 }
 th {
     width: 33%;
     height: fit-content;
     text-align: left;
-    color: black;
 }
 td {
     width: fit-content;
     height: fit-content;
-    color: black;
     align-content: center;
 }
 button{
     width: fit-content;
     height: fit-content;
-    margin-right: 5%;
 }
 
 input {
