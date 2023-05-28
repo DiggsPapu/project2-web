@@ -14,7 +14,9 @@ export class TeamComponent implements OnInit {
     private route: ActivatedRoute,
   ){}
   async ngOnInit() {
-    this.route.params.subscribe( (params:any) => {this.team = params['team']})
+    this.route.params.subscribe( (params:any) => {
+      this.team = params['team']
+    })
     this.listCards = await (this.fifaService.getPlayersFromTeam(this.team))
   }
 }
