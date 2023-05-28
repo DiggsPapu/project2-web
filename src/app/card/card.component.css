@@ -26,7 +26,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 1s;
     transform-style: preserve-3d;
   }
   
@@ -42,12 +42,11 @@
     backface-visibility: hidden;
   }
 .flip-card-front {
-    background-color: black;
-    color: orange;    
+    background-color: white;
+    color: black;    
   }
 .flip-card-front h1{
     font-size: 100%;
-    color: orange;
 
 }
 .flip-card-front img{
@@ -58,7 +57,7 @@
 .flip-card-back {
     background-color: black;
     color: white;
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
     display: flex;
     flex-direction: column;
     align-items: center;
