@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
-import { TableRowComponent } from './table-row/table-row.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -16,7 +15,6 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     CardComponent,
     TableComponent,
-    TableRowComponent,
     TeamComponent,
     HomeComponent
   ],

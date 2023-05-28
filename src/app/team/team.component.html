@@ -1,4 +1,5 @@
 <div class="container">
+    <h1><a routerLink="/app/home">To home</a></h1>
     <div class="card-list">
         <app-card 
         *ngFor="let card of listCards" class="card"
@@ -11,5 +12,4 @@
         [image]="card.image"
         ></app-card>
     </div>
-    <h1><a routerLink="/app/home">To home</a></h1>
 </div>

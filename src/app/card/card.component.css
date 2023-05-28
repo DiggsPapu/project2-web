@@ -4,20 +4,21 @@
    background-color: transparent;
 }
 .flip-card-back img{
-    width: 20%;
+    width: auto;
     background-color: transparent;
-    height: auto;
+    height: 50%;
 }
 .flip-card-back p {
     font-size: 50%;
     width: fit-content;
     background-color: transparent;
+    margin-bottom: 1%;
 }
 .flip-card {
     background-color: transparent;
     width: 100%;
     height: 100%;
-    border: 1px solid #f1f1f1;
+    border: 1px solid ;
     perspective: 1000px; 
   }
 .flip-card-inner {
@@ -41,21 +42,24 @@
     backface-visibility: hidden;
   }
 .flip-card-front {
-    background-color: #bbb;
-    color: black;
+    background-color: black;
+    color: orange;    
   }
 .flip-card-front h1{
-    font-size: 50%;
-    color: white;
+    font-size: 100%;
+    color: orange;
 
 }
 .flip-card-front img{
-    margin-top: 10%;
-    width: 100%;
+    margin-bottom:1%;
+    width: auto;
     height: auto;
 }
 .flip-card-back {
-    background-color: dodgerblue;
+    background-color: black;
     color: white;
     transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
