@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -25,6 +26,9 @@ export class TableComponent {
     } else {
       this.tableList = this.list.slice(this.minIndex, this.maxIndex)
     }
+  }
+  goToTeam(team:string) {
+    this.router.navigate([`app/team/${team}`]);
   }
   get totalPages(): number {
     return Math.ceil(this.list.length / this.itemsPerPage);
@@ -69,7 +73,7 @@ export class TableComponent {
   searchByName() {
     if (this.list.length === 1){this.tableList = this.list}
   }
-  constructor(){
+  constructor(private router: Router){
     setTimeout(()=>{this.tableList = this.list.slice(this.minIndex,this.maxIndex)},1000)
   }
 }

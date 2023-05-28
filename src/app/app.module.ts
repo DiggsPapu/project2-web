@@ -8,13 +8,17 @@ import { TableRowComponent } from './table-row/table-row.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { TeamComponent } from './team/team.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     TableComponent,
-    TableRowComponent
+    TableRowComponent,
+    TeamComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

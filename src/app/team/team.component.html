@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card-list">
+        <app-card *ngFor="let card of listCards" class="card"
+        [player_id]="card.player_id"
+        [name]="card.name"
+        [overall_rating]="card.overall_rating"
+        [weight]="card.weight"
+        [height]="card.height"
+        [full_name]="card.full_name"
+        [image]="card.image"
+        ></app-card>
+    </div>
+    <h1><a routerLink="/app/home">To home</a></h1>
+</div>
