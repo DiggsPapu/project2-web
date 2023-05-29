@@ -6,16 +6,17 @@ import { Router } from '@angular/router';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent {  
+export class TableComponent {
   @Input() list!: any
   minIndex:number = 0
   maxIndex:number = 5
   tableList: any = []
   currentPage: number = 1
   itemsPerPage: number = 5
-  searchQuery: string = '';
+  searchQuery: string = ''
 
   onSearch() {
+    console.log(this.searchQuery)
     if (this.searchQuery !== "") {
       this.tableList = []
       for (let index = 0; index < this.list.length; index++) {
